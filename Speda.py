@@ -101,7 +101,3 @@ if prompt := st.chat_input():
         response = generate_response(prompt)
         insert_into_db(prompt, response)  # Cevabı veritabanına kaydet
     
-    # "..." yerine yanıtı yavaş yavaş yazdırma
-    placeholder.empty()
-    type_text(response)
-    st.session_state.messages.append({"role": "assistant", "content": response})
