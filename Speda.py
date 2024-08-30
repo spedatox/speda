@@ -89,10 +89,6 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user", avatar="🧑‍💻").write(prompt)
     
-    # "..." ile bekletme etkisi
-    placeholder = st.chat_message("assistant", avatar="🕷")
-    time.sleep(0.5)  # Bekleme süresi
-    
     # Veritabanından cevabı almayı dene
     response = get_response_from_db(prompt)
     
